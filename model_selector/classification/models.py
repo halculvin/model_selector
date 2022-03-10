@@ -2,15 +2,18 @@ from model_selector.classification.base_classification import Base
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
 from sklearn.naive_bayes import GaussianNB
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 
 
 class LogisticReg(Base):
+    """
+    This class performs a logistic regression. It inherits from the Base class from the base_classification.py module
+    """
 
     def __init__(self, file_path):
+        super().__init__(file_path)
         self.file_path = file_path
         self.classifier = LogisticRegression(random_state=0)
 
@@ -19,8 +22,13 @@ class LogisticReg(Base):
 
 
 class DecisionTree(Base):
+    """
+    This class performs a decision tree classification. It inherits from the Base class from the
+    base_classification.py module
+    """
 
     def __init__(self, file_path):
+        super().__init__(file_path)
         self.file_path = file_path
         self.classifier = DecisionTreeClassifier(criterion='entropy', random_state=0)
 
@@ -29,8 +37,13 @@ class DecisionTree(Base):
 
 
 class KNearestNeighbors(Base):
+    """
+    This class performs a K Nearest Neighbors classification. It inherits from the Base class from the
+    base_classification.py module
+    """
 
     def __init__(self, file_path):
+        super().__init__(file_path)
         self.file_path = file_path
         self.classifier = KNeighborsClassifier(n_neighbors=5, metric='minkowski', p=2)
 
@@ -39,8 +52,13 @@ class KNearestNeighbors(Base):
 
 
 class KernelSVM(Base):
+    """
+    This class performs a Kernel SVM classification. It inherits from the Base class from the base_classification.py
+    module
+    """
 
     def __init__(self, file_path):
+        super().__init__(file_path)
         self.file_path = file_path
         self.classifier = SVC(kernel='rbf', random_state=0)
 
@@ -49,8 +67,13 @@ class KernelSVM(Base):
 
 
 class NaiveBayes(Base):
+    """
+    This class performs a Naive Bayes classification. It inherits from the Base class from the base_classification.py
+    module
+    """
 
     def __init__(self, file_path):
+        super().__init__(file_path)
         self.file_path = file_path
         self.classifier = GaussianNB()
 
@@ -59,8 +82,13 @@ class NaiveBayes(Base):
 
 
 class RandomForest(Base):
+    """
+    This class performs a Random Forest classification. It inherits from the Base class from the
+    base_classification.py module
+    """
 
     def __init__(self, file_path):
+        super().__init__(file_path)
         self.file_path = file_path
         self.classifier = RandomForestClassifier(n_estimators=10, criterion='entropy', random_state=0)
 
@@ -69,10 +97,14 @@ class RandomForest(Base):
 
 
 class SupportVectorMachine(Base):
+    """
+    This class performs a support vector machine classification. It inherits from the Base class from the
+    base_classification.py module
+    """
 
     def __init__(self, file_path):
+        super().__init__(file_path)
         self.file_path = file_path
-        self.classifier = RandomForestClassifier(n_estimators=10, criterion='entropy', random_state=0)
         self.classifier = SVC(kernel='linear', random_state=0)
 
     def __str__(self):

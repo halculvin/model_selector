@@ -5,9 +5,9 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="model_selector",
-    version="1.0.0",
-    author=["Harry McNinson"],
-    author_email=["harrymn@uw.edu"],
+    version="1.0.2",
+    author="Harry McNinson",
+    author_email="harrymn@uw.edu",
     description="This package will help you select the regression model or classification model for your dataset. "
                 "Provide the file path to your dataset and watch this package do the rest of the work for you.",
     long_description=long_description,
