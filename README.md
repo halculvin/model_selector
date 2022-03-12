@@ -22,6 +22,11 @@ model_selector/
       |- models.py
     |- tests/
       |- __init__.py
+      |- data_c.csv
+      |- data_r.csv
+      |- test_base_classification.py
+      |- test_base_regression.py
+      |- test_evaluate.py
   |- data/
     |- Data_classification.csv
     |- Sales_Used_Cars.csv
